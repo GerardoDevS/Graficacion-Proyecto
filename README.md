@@ -1,5 +1,5 @@
 # Graficacion-Proyecto
 Juego multiplataforma hecho en GodotEngine
-![Captura de pantalla (19)](https://user-images.githubusercontent.com/50755752/188245641-0e0c74c1-c6f0-4ecf-821d-8cabc35abfa7.png)
-![Captura de pantalla (20)](https://user-images.githubusercontent.com/50755752/188245643-b0f1887e-93b0-401a-89c2-9e409058c941.png)
-![Captura de pantalla (21)](https://user-images.githubusercontent.com/50755752/188245644-f1705e22-46e7-42d2-824a-9bcd90cd0a81.png)
+![Captura3Juego](https://user-images.githubusercontent.com/50755752/188245724-d1bc2389-1b92-4b54-96d4-8728f2394a85.PNG)
+![Captura2Juego](https://user-images.githubusercontent.com/50755752/188245725-b164341b-7fad-43c7-a459-54aae15cb6d3.PNG)
+![Captura1Juego](https://user-images.githubusercontent.com/50755752/188245726-d21c6e03-ce4f-48c5-8711-9e40045bc6cc.PNG)
