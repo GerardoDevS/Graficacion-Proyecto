@@ -1,0 +1,50 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Sprites/Obstaculos/Sierra/spritesheet3.png" type="Texture" id=1]
+[ext_resource path="res://Animations/Obstaculos/SierraMov.tres" type="Animation" id=2]
+[ext_resource path="res://Animations/Obstaculos/SierraAnimation.tres" type="Animation" id=3]
+[ext_resource path="res://Scripts/Sierra.gd" type="Script" id=4]
+
+[sub_resource type="AnimationNodeAnimation" id=2]
+animation = "SierraAnimation"
+
+[sub_resource type="AnimationNodeAnimation" id=3]
+animation = "SierraMov"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=4]
+switch_mode = 1
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachine" id=6]
+states/SierraAnimation/node = SubResource( 2 )
+states/SierraAnimation/position = Vector2( 234, 25 )
+states/SierraMov/node = SubResource( 3 )
+states/SierraMov/position = Vector2( 429, 85 )
+transitions = [ "SierraAnimation", "SierraMov", SubResource( 4 ) ]
+start_node = "SierraAnimation"
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=7]
+
+[node name="Sierra" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -11.9344, -35.4281 )
+texture = ExtResource( 1 )
+hframes = 3
+frame = 1
+
+[node name="Area2D" type="Area2D" parent="Sprite"]
+script = ExtResource( 4 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite/Area2D"]
+anims/SierraAnimation = ExtResource( 3 )
+anims/SierraMov = ExtResource( 2 )
+
+[node name="AnimationTree" type="AnimationTree" parent="Sprite/Area2D"]
+tree_root = SubResource( 6 )
+anim_player = NodePath("../AnimationPlayer")
+parameters/playback = SubResource( 7 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sprite/Area2D"]
+polygon = PoolVector2Array( -145.102, 27.4564, 183.773, 29.4127, 178.728, -7.58672, 166.955, -34.4954, 150.138, -64.7677, 123.229, -88.3128, 79.5022, -106.813, 17.2759, -115.221, -43.2687, -110.176, -86.9953, -86.631, -122.313, -58.0405, -140.813, -22.7229 )
+[connection signal="body_entered" from="Sprite/Area2D" to="Sprite/Area2D" method="_on_Area2D_body_entered"]

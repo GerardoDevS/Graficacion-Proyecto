@@ -1,0 +1,68 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://GUI/Botones/Salir/salir_boton_1.png" type="Texture" id=1]
+[ext_resource path="res://GUI/Botones/Salir/salir_boton_0.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/Botones.gd" type="Script" id=3]
+[ext_resource path="res://GUI/PjStatic/sprite 1.png" type="Texture" id=4]
+[ext_resource path="res://GUI/MenuBg/MenuBg.png" type="Texture" id=5]
+[ext_resource path="res://GUI/Botones/Iniciar/salir_boton_1.png" type="Texture" id=6]
+[ext_resource path="res://GUI/Botones/Iniciar/salir_boton_0.png" type="Texture" id=7]
+[ext_resource path="res://Fonts/cyberspace.ttf" type="DynamicFontData" id=8]
+
+[sub_resource type="DynamicFont" id=1]
+size = 120
+font_data = ExtResource( 8 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Bg" type="Sprite" parent="."]
+position = Vector2( 686.108, 381.764 )
+scale = Vector2( 0.5561, 0.475486 )
+texture = ExtResource( 5 )
+
+[node name="Salir" type="TextureButton" parent="."]
+margin_left = 673.648
+margin_top = 508.586
+margin_right = 1693.65
+margin_bottom = 1103.59
+rect_scale = Vector2( 0.3, 0.3 )
+texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Iniciar" type="TextureButton" parent="."]
+margin_left = 625.448
+margin_top = 256.244
+margin_right = 1129.45
+margin_bottom = 548.244
+rect_scale = Vector2( 0.8, 0.8 )
+texture_normal = ExtResource( 7 )
+texture_pressed = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="sprite 1" type="Sprite" parent="."]
+position = Vector2( 193.634, 392.22 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 4 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 457.163
+margin_top = 102.112
+margin_right = 1213.16
+margin_bottom = 215.112
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.835294, 0.72549, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0.341176, 0.678431, 0.972549, 1 )
+text = "Neo kat"
+[connection signal="button_up" from="Salir" to="." method="_on_TextureButton_button_up"]
+[connection signal="button_up" from="Iniciar" to="." method="_on_Iniciar_button_up"]

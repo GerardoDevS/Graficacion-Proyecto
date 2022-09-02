@@ -1,0 +1,189 @@
+[gd_scene load_steps=38 format=2]
+
+[ext_resource path="res://Sprites/Player/SpriteSheet/spritesheet.png" type="Texture" id=1]
+[ext_resource path="res://Animations/Player/idle_player.tres" type="Animation" id=2]
+[ext_resource path="res://Scripts/PlayerScript.gd" type="Script" id=3]
+[ext_resource path="res://Animations/Player/walk_player.tres" type="Animation" id=4]
+[ext_resource path="res://Animations/Player/dash_player.tres" type="Animation" id=5]
+[ext_resource path="res://Animations/Player/jump_player.tres" type="Animation" id=6]
+[ext_resource path="res://Animations/Player/born_player.tres" type="Animation" id=7]
+[ext_resource path="res://Animations/Player/death_player.tres" type="Animation" id=8]
+[ext_resource path="res://GUI/Face/FaceToR.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/Token/HyperCubeToken.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/Token/HyperCubeTokenUI.png" type="Texture" id=11]
+[ext_resource path="res://Scenes/Menu.tscn" type="PackedScene" id=12]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 18, 40.5 )
+
+[sub_resource type="AnimationNodeAnimation" id=2]
+animation = "born_player"
+
+[sub_resource type="AnimationNodeAnimation" id=3]
+animation = "dash_player"
+
+[sub_resource type="AnimationNodeAnimation" id=4]
+animation = "dash_player"
+
+[sub_resource type="AnimationNodeAnimation" id=5]
+animation = "death_player"
+
+[sub_resource type="AnimationNodeAnimation" id=6]
+animation = "idle_player"
+
+[sub_resource type="AnimationNodeAnimation" id=7]
+animation = "jump_player"
+
+[sub_resource type="AnimationNodeAnimation" id=8]
+animation = "jump_player"
+
+[sub_resource type="AnimationNodeAnimation" id=9]
+animation = "walk_player"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=10]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=11]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=12]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=13]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=14]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=15]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=16]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=17]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=18]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=19]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=20]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=21]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=22]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=23]
+
+[sub_resource type="AnimationNodeStateMachine" id=24]
+states/born_player/node = SubResource( 2 )
+states/born_player/position = Vector2( 15, 33 )
+states/dash_player/node = SubResource( 4 )
+states/dash_player/position = Vector2( 453, 148 )
+"states/dash_player 2/node" = SubResource( 3 )
+"states/dash_player 2/position" = Vector2( 643.605, 169 )
+states/death_player/node = SubResource( 5 )
+states/death_player/position = Vector2( 15, 142 )
+states/idle_player/node = SubResource( 6 )
+states/idle_player/position = Vector2( 220, 46 )
+states/jump_player/node = SubResource( 8 )
+states/jump_player/position = Vector2( 266, 200 )
+"states/jump_player 2/node" = SubResource( 7 )
+"states/jump_player 2/position" = Vector2( 664.605, 51 )
+states/walk_player/node = SubResource( 9 )
+states/walk_player/position = Vector2( 419, 9 )
+transitions = [ "jump_player", "idle_player", SubResource( 10 ), "idle_player", "walk_player", SubResource( 11 ), "idle_player", "dash_player", SubResource( 12 ), "walk_player", "idle_player", SubResource( 13 ), "dash_player", "idle_player", SubResource( 14 ), "idle_player", "jump_player", SubResource( 15 ), "idle_player", "death_player", SubResource( 16 ), "idle_player", "born_player", SubResource( 17 ), "born_player", "idle_player", SubResource( 18 ), "walk_player", "dash_player 2", SubResource( 19 ), "dash_player 2", "walk_player", SubResource( 20 ), "jump_player 2", "dash_player 2", SubResource( 21 ), "walk_player", "jump_player", SubResource( 22 ), "jump_player", "dash_player 2", SubResource( 23 ) ]
+start_node = "born_player"
+end_node = "death_player"
+graph_offset = Vector2( -99.3949, -16 )
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=25]
+
+[node name="Player" type="Node2D"]
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
+script = ExtResource( 3 )
+
+[node name="PlayerSpriteSheet" type="Sprite" parent="KinematicBody2D"]
+position = Vector2( -5.00001, 4.50003 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+flip_h = true
+hframes = 31
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
+position = Vector2( -4, 10.5 )
+shape = SubResource( 1 )
+
+[node name="AnimationTree" type="AnimationTree" parent="KinematicBody2D"]
+tree_root = SubResource( 24 )
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/playback = SubResource( 25 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="KinematicBody2D"]
+anims/born_player = ExtResource( 7 )
+anims/dash_player = ExtResource( 5 )
+anims/death_player = ExtResource( 8 )
+anims/idle_player = ExtResource( 2 )
+anims/jump_player = ExtResource( 6 )
+anims/walk_player = ExtResource( 4 )
+
+[node name="Timer" type="Timer" parent="KinematicBody2D"]
+wait_time = 0.2
+one_shot = true
+
+[node name="Camera2D" type="Camera2D" parent="KinematicBody2D"]
+position = Vector2( 251.73, -149.907 )
+current = true
+limit_smoothed = true
+smoothing_enabled = true
+smoothing_speed = 10.0
+
+[node name="Interface" type="Control" parent="KinematicBody2D/Camera2D"]
+margin_left = -679.0
+margin_top = -387.0
+margin_right = 685.0
+margin_bottom = 380.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FaceToR" type="Sprite" parent="KinematicBody2D/Camera2D/Interface"]
+position = Vector2( 80.8201, 76.4143 )
+scale = Vector2( 0.134249, 0.134249 )
+texture = ExtResource( 9 )
+
+[node name="Label" type="Label" parent="KinematicBody2D/Camera2D/Interface"]
+margin_left = 1153.43
+margin_top = 40.2236
+margin_right = 1306.43
+margin_bottom = 83.2236
+text = "0000"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TokenColored" type="Sprite" parent="KinematicBody2D/Camera2D/Interface"]
+position = Vector2( 189.637, 77.4531 )
+scale = Vector2( 0.05, 0.05 )
+texture = ExtResource( 10 )
+
+[node name="TokenGray" type="Sprite" parent="KinematicBody2D/Camera2D/Interface"]
+position = Vector2( 188.378, 76.5619 )
+scale = Vector2( 0.54955, 0.549551 )
+texture = ExtResource( 11 )
+
+[node name="Menu" parent="KinematicBody2D/Camera2D" instance=ExtResource( 12 )]
+visible = false
+
+[node name="DetectionArea" type="Area2D" parent="KinematicBody2D"]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="KinematicBody2D/DetectionArea"]
+position = Vector2( -4, 10.5 )
+shape = SubResource( 1 )
+[connection signal="timeout" from="KinematicBody2D/Timer" to="KinematicBody2D" method="_on_Timer_timeout"]
+[connection signal="area_entered" from="KinematicBody2D/DetectionArea" to="KinematicBody2D" method="_on_DetectionArea_area_entered"]

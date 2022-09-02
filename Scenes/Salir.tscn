@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://GUI/Botones/Salir/salir_boton_1.png" type="Texture" id=1]
+[ext_resource path="res://GUI/Botones/Salir/salir_boton_0.png" type="Texture" id=2]
+
+[node name="Salir" type="TextureButton"]
+margin_left = -532.439
+margin_top = -662.069
+margin_right = -492.439
+margin_bottom = -622.069
+texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

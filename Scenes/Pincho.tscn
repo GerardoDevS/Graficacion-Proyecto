@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Sprites/Obstaculos/Pincho/pincho.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/pincho.gd" type="Script" id=2]
+
+[node name="Pincho" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="Area2D"]
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PoolVector2Array( 1.5144, -19.8918, -7.99925, 1.51393, -16.0264, 37.1901, 19.6498, 37.1901, 10.7308, 1.21663 )
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_Area2D_body_entered"]

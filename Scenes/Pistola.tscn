@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Sprites/Obstaculos/Pistola/pistola.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/Obstaculos/Pistola/pistolaproyectil.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/Bala.gd" type="Script" id=3]
+[ext_resource path="res://Animations/Obstaculos/Disparo.tres" type="Animation" id=4]
+[ext_resource path="res://Scripts/Pistola.gd" type="Script" id=5]
+
+[node name="Pistola" type="Node2D"]
+script = ExtResource( 5 )
+
+[node name="Bala" type="Node2D" parent="."]
+position = Vector2( 0, -2 )
+scale = Vector2( 1, 0.7 )
+
+[node name="Position2D" type="Position2D" parent="Bala"]
+
+[node name="SpriteBala" type="Sprite" parent="Bala"]
+position = Vector2( 41.1886, -23.2099 )
+texture = ExtResource( 2 )
+
+[node name="Area2D" type="Area2D" parent="Bala/SpriteBala"]
+position = Vector2( -41.1886, 30.2998 )
+script = ExtResource( 3 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Bala/SpriteBala/Area2D"]
+anims/Disparo = ExtResource( 4 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Bala/SpriteBala/Area2D"]
+position = Vector2( -20.2165, 159.693 )
+polygon = PoolVector2Array( -3.02728, -178.995, -3.02728, -107.642, 40.9734, -109.341, 40.9734, -185.79, 17.1892, -204.478 )
+
+[node name="SpritePis" type="Sprite" parent="."]
+position = Vector2( 26.9087, -112.635 )
+texture = ExtResource( 1 )
+[connection signal="body_entered" from="Bala/SpriteBala/Area2D" to="Bala/SpriteBala/Area2D" method="_on_Area2D_body_entered"]

@@ -1,0 +1,518 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Sprites/Plataformas/escenario_1.png" type="Texture" id=1]
+[ext_resource path="res://Backgrounds/bglevel1.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/wifiPlataform.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Hypercube.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Pincho.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Door.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Pistola.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Sierra.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=9]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 446.706, 19.8757 )
+
+[node name="Background" type="Node2D"]
+position = Vector2( 0, 6 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -1175.0
+margin_top = -859.0
+margin_right = 2533.0
+margin_bottom = 1071.0
+color = Color( 0.14902, 0.0666667, 0.211765, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bglevel1" type="Sprite" parent="."]
+position = Vector2( 692.943, 94.757 )
+scale = Vector2( 0.761299, 0.878294 )
+texture = ExtResource( 2 )
+
+[node name="Mapa" type="Node2D" parent="."]
+
+[node name="plataformaFlotante4" type="Sprite" parent="Mapa"]
+position = Vector2( 1091.55, -219.639 )
+scale = Vector2( 0.529462, 0.435875 )
+texture = ExtResource( 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Mapa/plataformaFlotante4"]
+position = Vector2( 1.11275, -34.4023 )
+scale = Vector2( 0.529447, 0.474976 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mapa/plataformaFlotante4/StaticBody2D"]
+position = Vector2( -6.64938, -116.511 )
+shape = SubResource( 1 )
+
+[node name="plataformaFlotante3" type="Sprite" parent="Mapa"]
+position = Vector2( -125.623, 201.893 )
+scale = Vector2( 0.529462, 0.435875 )
+texture = ExtResource( 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Mapa/plataformaFlotante3"]
+position = Vector2( 1.11275, -34.4023 )
+scale = Vector2( 0.529447, 0.474976 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mapa/plataformaFlotante3/StaticBody2D"]
+position = Vector2( -6.64938, -116.511 )
+shape = SubResource( 1 )
+
+[node name="plataformaFlotante2" type="Sprite" parent="Mapa"]
+position = Vector2( 964.907, 428.356 )
+scale = Vector2( 0.529462, 0.435875 )
+texture = ExtResource( 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Mapa/plataformaFlotante2"]
+position = Vector2( 1.11275, -34.4023 )
+scale = Vector2( 0.529447, 0.474976 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mapa/plataformaFlotante2/StaticBody2D"]
+position = Vector2( -6.64938, -116.511 )
+shape = SubResource( 1 )
+
+[node name="plataformaFlotante" type="Sprite" parent="Mapa"]
+position = Vector2( 1284.29, 520.502 )
+scale = Vector2( 0.529462, 0.435875 )
+texture = ExtResource( 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Mapa/plataformaFlotante"]
+position = Vector2( 1.11275, -34.4023 )
+scale = Vector2( 0.529447, 0.474976 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mapa/plataformaFlotante/StaticBody2D"]
+position = Vector2( -6.64938, -116.511 )
+shape = SubResource( 1 )
+
+[node name="Plataforma16" parent="Mapa" instance=ExtResource( 3 )]
+position = Vector2( 955, -31.142 )
+
+[node name="PlataformaVeIz2" parent="Mapa" instance=ExtResource( 3 )]
+position = Vector2( 1541.16, 62.5094 )
+rotation = 1.5708
+
+[node name="PlataformaVeIz3" parent="Mapa" instance=ExtResource( 3 )]
+position = Vector2( 1541.16, 316.46 )
+rotation = 1.5708
+
+[node name="PlataformaVder7" parent="Mapa" instance=ExtResource( 3 )]
+position = Vector2( 1336.18, 56.4993 )
+rotation = -1.5708
+
+[node name="PlataformaVder2" parent="Mapa" instance=ExtResource( 3 )]
+position = Vector2( 1927.85, 460.13 )
+rotation = -1.5708
+
+[node name="PlataformaVder5" parent="Mapa" instance=ExtResource( 3 )]
+position = Vector2( 1928.17, -296.677 )
+rotation = -1.5708
+
+[node name="PlataformaVder4" parent="Mapa" instance=ExtResource( 3 )]
+position = Vector2( 1928.17, -41.0447 )
+rotation = -1.5708
+
+[node name="PlataformaVder3" parent="Mapa" instance=ExtResource( 3 )]
+position = Vector2( 1927.85, 212.906 )
+rotation = -1.5708
+
+[node name="PlataformaVder6" parent="Mapa" instance=ExtResource( 3 )]
+position = Vector2( 1333.81, 221.315 )
+rotation = -1.5708
+
+[node name="PlataformaVder" parent="Mapa" instance=ExtResource( 3 )]
+position = Vector2( 1334.18, 460.13 )
+rotation = -1.5708
+
+[node name="PlataformaVeIz4" parent="Mapa" instance=ExtResource( 3 )]
+position = Vector2( 1541.16, 462.776 )
+rotation = 1.5708
+
+[node name="PlataformaVeIz" parent="Mapa" instance=ExtResource( 3 )]
+position = Vector2( -544.262, 459.412 )
+rotation = 1.5708
+
+[node name="PlataformaVeIz5" parent="Mapa" instance=ExtResource( 3 )]
+position = Vector2( -544.262, 207.144 )
+rotation = 1.5708
+
+[node name="PlataformaVeIz6" parent="Mapa" instance=ExtResource( 3 )]
+position = Vector2( -542.58, -100.625 )
+rotation = 1.5708
+
+[node name="PlataformaVeIz7" parent="Mapa" instance=ExtResource( 3 )]
+position = Vector2( -542.898, -360.984 )
+rotation = 1.5708
+
+[node name="PlataformaDCabeza8" parent="Mapa" instance=ExtResource( 3 )]
+position = Vector2( -26.8003, -440.288 )
+rotation = -3.14159
+
+[node name="PlataformaDCabeza9" parent="Mapa" instance=ExtResource( 3 )]
+position = Vector2( -282.433, -439.606 )
+rotation = -3.14159
+
+[node name="PlataformaDCabeza10" parent="Mapa" instance=ExtResource( 3 )]
+position = Vector2( -490.975, -439.606 )
+rotation = -3.14159
+
+[node name="PlataformaDCabeza7" parent="Mapa" instance=ExtResource( 3 )]
+position = Vector2( 223.105, -439.924 )
+rotation = -3.14159
+
+[node name="PlataformaDCabeza6" parent="Mapa" instance=ExtResource( 3 )]
+position = Vector2( 480.056, -439.924 )
+rotation = -3.14159
+
+[node name="PlataformaDCabeza5" parent="Mapa" instance=ExtResource( 3 )]
+position = Vector2( 730.643, -440.242 )
+rotation = -3.14159
+
+[node name="PlataformaDCabeza4" parent="Mapa" instance=ExtResource( 3 )]
+position = Vector2( 989.548, -440.242 )
+rotation = -3.14159
+
+[node name="PlataformaDCabeza11" parent="Mapa" instance=ExtResource( 3 )]
+position = Vector2( 2001.36, -440.573 )
+rotation = -3.14159
+
+[node name="PlataformaDCabeza3" parent="Mapa" instance=ExtResource( 3 )]
+position = Vector2( 1235.56, -440.242 )
+rotation = -3.14159
+
+[node name="PlataformaDCabeza2" parent="Mapa" instance=ExtResource( 3 )]
+position = Vector2( 1492.24, -440.242 )
+rotation = -3.14159
+
+[node name="PlataformaDCabeza" parent="Mapa" instance=ExtResource( 3 )]
+position = Vector2( 1751.23, -440.242 )
+rotation = -3.14159
+
+[node name="Plataforma20" parent="Mapa" instance=ExtResource( 3 )]
+position = Vector2( 1858.87, 639.469 )
+
+[node name="Plataforma19" parent="Mapa" instance=ExtResource( 3 )]
+position = Vector2( 1601.55, 639.469 )
+
+[node name="Plataforma18" parent="Mapa" instance=ExtResource( 3 )]
+position = Vector2( 1473.74, -84.6563 )
+
+[node name="Plataforma17" parent="Mapa" instance=ExtResource( 3 )]
+position = Vector2( 1213.3, -31.142 )
+
+[node name="Plataforma14" parent="Mapa" instance=ExtResource( 3 )]
+position = Vector2( 437.257, -31.1421 )
+
+[node name="Plataforma15" parent="Mapa" instance=ExtResource( 3 )]
+position = Vector2( 696, -85.142 )
+
+[node name="Plataforma13" parent="Mapa" instance=ExtResource( 3 )]
+position = Vector2( 178.257, -86.1421 )
+
+[node name="Plataforma12" parent="Mapa" instance=ExtResource( 3 )]
+position = Vector2( -80.4769, -25.1421 )
+
+[node name="Plataforma11" parent="Mapa" instance=ExtResource( 3 )]
+position = Vector2( -475.943, 92.698 )
+
+[node name="Plataforma10" parent="Mapa" instance=ExtResource( 3 )]
+position = Vector2( -351.616, 327.296 )
+
+[node name="Plataforma9" parent="Mapa" instance=ExtResource( 3 )]
+position = Vector2( -97.1258, 326.918 )
+
+[node name="Plataforma8" parent="Mapa" instance=ExtResource( 3 )]
+position = Vector2( 159.743, 326.918 )
+
+[node name="Plataforma7" parent="Mapa" instance=ExtResource( 3 )]
+position = Vector2( 411.855, 326.918 )
+
+[node name="Plataforma4" parent="Mapa" instance=ExtResource( 3 )]
+position = Vector2( 655.453, 326.918 )
+
+[node name="Plataforma3" parent="Mapa" instance=ExtResource( 3 )]
+position = Vector2( 1152.54, 633.733 )
+
+[node name="Plataforma6" parent="Mapa" instance=ExtResource( 3 )]
+position = Vector2( 903.063, 633.354 )
+
+[node name="Plataforma5" parent="Mapa" instance=ExtResource( 3 )]
+position = Vector2( 647.384, 633.354 )
+
+[node name="Plataforma2" parent="Mapa" instance=ExtResource( 3 )]
+position = Vector2( 389.704, 633.354 )
+
+[node name="Plataforma" parent="Mapa" instance=ExtResource( 3 )]
+position = Vector2( 130.704, 633.354 )
+
+[node name="Plataforma21" parent="Mapa" instance=ExtResource( 3 )]
+position = Vector2( -128.292, 633.354 )
+
+[node name="Plataforma22" parent="Mapa" instance=ExtResource( 3 )]
+position = Vector2( -377.197, 633.354 )
+
+[node name="Plataforma23" parent="Mapa" instance=ExtResource( 3 )]
+position = Vector2( -636.194, 633.354 )
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+margin_left = -1144.3
+margin_top = -853.661
+margin_right = -597.303
+margin_bottom = 1076.34
+color = Color( 0.14902, 0.0666667, 0.211765, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+margin_left = 1985.9
+margin_top = -821.625
+margin_right = 2532.9
+margin_bottom = 1108.38
+color = Color( 0.14902, 0.0666667, 0.211765, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Obstaculos" type="Node2D" parent="."]
+
+[node name="Pincho5" parent="Obstaculos" instance=ExtResource( 5 )]
+position = Vector2( 343.59, 543.674 )
+
+[node name="Pincho6" parent="Obstaculos" instance=ExtResource( 5 )]
+position = Vector2( 344.59, 407.619 )
+rotation = 3.14159
+scale = Vector2( 1, 0.8 )
+
+[node name="4Pinchos" type="Node2D" parent="Obstaculos"]
+
+[node name="Pincho" parent="Obstaculos/4Pinchos" instance=ExtResource( 5 )]
+position = Vector2( -49.0374, 541.485 )
+
+[node name="Pincho2" parent="Obstaculos/4Pinchos" instance=ExtResource( 5 )]
+position = Vector2( -6.22598, 541.485 )
+
+[node name="Pincho3" parent="Obstaculos/4Pinchos" instance=ExtResource( 5 )]
+position = Vector2( 35.3963, 541.485 )
+
+[node name="Pincho4" parent="Obstaculos/4Pinchos" instance=ExtResource( 5 )]
+position = Vector2( 80.7754, 541.296 )
+
+[node name="4Pinchos13" type="Node2D" parent="Obstaculos"]
+position = Vector2( 1665.08, 5.56763 )
+
+[node name="Pincho" parent="Obstaculos/4Pinchos13" instance=ExtResource( 5 )]
+position = Vector2( -49.0374, 541.485 )
+
+[node name="Pincho2" parent="Obstaculos/4Pinchos13" instance=ExtResource( 5 )]
+position = Vector2( -6.22598, 541.485 )
+
+[node name="Pincho3" parent="Obstaculos/4Pinchos13" instance=ExtResource( 5 )]
+position = Vector2( 35.3963, 541.485 )
+
+[node name="Pincho4" parent="Obstaculos/4Pinchos13" instance=ExtResource( 5 )]
+position = Vector2( 80.7754, 541.296 )
+
+[node name="4Pinchos2" type="Node2D" parent="Obstaculos"]
+position = Vector2( 348.438, -303.248 )
+
+[node name="Pincho" parent="Obstaculos/4Pinchos2" instance=ExtResource( 5 )]
+position = Vector2( -49.0374, 541.485 )
+
+[node name="Pincho2" parent="Obstaculos/4Pinchos2" instance=ExtResource( 5 )]
+position = Vector2( -6.22598, 541.485 )
+
+[node name="Pincho3" parent="Obstaculos/4Pinchos2" instance=ExtResource( 5 )]
+position = Vector2( 35.3963, 541.485 )
+
+[node name="Pincho4" parent="Obstaculos/4Pinchos2" instance=ExtResource( 5 )]
+position = Vector2( 80.7754, 541.296 )
+
+[node name="4Pinchos3" type="Node2D" parent="Obstaculos"]
+position = Vector2( -223.486, -19.942 )
+scale = Vector2( 1, 0.5 )
+
+[node name="Pincho" parent="Obstaculos/4Pinchos3" instance=ExtResource( 5 )]
+position = Vector2( -49.0374, 541.485 )
+
+[node name="Pincho2" parent="Obstaculos/4Pinchos3" instance=ExtResource( 5 )]
+position = Vector2( -6.22598, 541.485 )
+
+[node name="Pincho3" parent="Obstaculos/4Pinchos3" instance=ExtResource( 5 )]
+position = Vector2( 35.3963, 541.485 )
+
+[node name="Pincho4" parent="Obstaculos/4Pinchos3" instance=ExtResource( 5 )]
+position = Vector2( 80.7754, 541.296 )
+
+[node name="4Pinchos5" type="Node2D" parent="Obstaculos"]
+position = Vector2( 422.168, -661.199 )
+
+[node name="Pincho" parent="Obstaculos/4Pinchos5" instance=ExtResource( 5 )]
+position = Vector2( -49.0374, 541.485 )
+
+[node name="Pincho2" parent="Obstaculos/4Pinchos5" instance=ExtResource( 5 )]
+position = Vector2( -6.22598, 541.485 )
+
+[node name="Pincho3" parent="Obstaculos/4Pinchos5" instance=ExtResource( 5 )]
+position = Vector2( 35.3963, 541.485 )
+
+[node name="Pincho4" parent="Obstaculos/4Pinchos5" instance=ExtResource( 5 )]
+position = Vector2( 80.7754, 541.296 )
+
+[node name="4Pinchos6" type="Node2D" parent="Obstaculos"]
+position = Vector2( 903.797, -662.388 )
+
+[node name="Pincho" parent="Obstaculos/4Pinchos6" instance=ExtResource( 5 )]
+position = Vector2( -49.0374, 541.485 )
+
+[node name="Pincho2" parent="Obstaculos/4Pinchos6" instance=ExtResource( 5 )]
+position = Vector2( -6.22598, 541.485 )
+
+[node name="Pincho3" parent="Obstaculos/4Pinchos6" instance=ExtResource( 5 )]
+position = Vector2( 35.3963, 541.485 )
+
+[node name="Pincho4" parent="Obstaculos/4Pinchos6" instance=ExtResource( 5 )]
+position = Vector2( 80.7754, 541.296 )
+
+[node name="4Pinchos7" type="Node2D" parent="Obstaculos"]
+position = Vector2( 1076.23, -662.388 )
+
+[node name="Pincho" parent="Obstaculos/4Pinchos7" instance=ExtResource( 5 )]
+position = Vector2( -49.0374, 541.485 )
+
+[node name="Pincho2" parent="Obstaculos/4Pinchos7" instance=ExtResource( 5 )]
+position = Vector2( -6.22598, 541.485 )
+
+[node name="Pincho3" parent="Obstaculos/4Pinchos7" instance=ExtResource( 5 )]
+position = Vector2( 35.3963, 541.485 )
+
+[node name="Pincho4" parent="Obstaculos/4Pinchos7" instance=ExtResource( 5 )]
+position = Vector2( 80.7754, 541.296 )
+
+[node name="4Pinchos8" type="Node2D" parent="Obstaculos"]
+position = Vector2( 1247.48, -662.199 )
+
+[node name="Pincho" parent="Obstaculos/4Pinchos8" instance=ExtResource( 5 )]
+position = Vector2( -49.0374, 541.485 )
+
+[node name="Pincho2" parent="Obstaculos/4Pinchos8" instance=ExtResource( 5 )]
+position = Vector2( -6.22598, 541.485 )
+
+[node name="Pincho3" parent="Obstaculos/4Pinchos8" instance=ExtResource( 5 )]
+position = Vector2( 35.3963, 541.485 )
+
+[node name="Pincho4" parent="Obstaculos/4Pinchos8" instance=ExtResource( 5 )]
+position = Vector2( 73.7754, 541.296 )
+
+[node name="4Pinchos4" type="Node2D" parent="Obstaculos"]
+position = Vector2( 90.4717, -90.3337 )
+rotation = 1.5708
+
+[node name="Pincho" parent="Obstaculos/4Pinchos4" instance=ExtResource( 5 )]
+position = Vector2( -49.0374, 541.485 )
+
+[node name="Pincho2" parent="Obstaculos/4Pinchos4" instance=ExtResource( 5 )]
+position = Vector2( -6.22598, 541.485 )
+
+[node name="Pincho3" parent="Obstaculos/4Pinchos4" instance=ExtResource( 5 )]
+position = Vector2( 35.3963, 541.485 )
+
+[node name="Pincho4" parent="Obstaculos/4Pinchos4" instance=ExtResource( 5 )]
+position = Vector2( 80.7754, 541.296 )
+
+[node name="4Pinchos9" type="Node2D" parent="Obstaculos"]
+position = Vector2( 1013.96, -97.8135 )
+rotation = 3.14159
+scale = Vector2( 1, 0.5 )
+
+[node name="Pincho" parent="Obstaculos/4Pinchos9" instance=ExtResource( 5 )]
+position = Vector2( -49.0374, 541.485 )
+
+[node name="Pincho2" parent="Obstaculos/4Pinchos9" instance=ExtResource( 5 )]
+position = Vector2( -6.22598, 541.485 )
+
+[node name="Pincho3" parent="Obstaculos/4Pinchos9" instance=ExtResource( 5 )]
+position = Vector2( 35.3963, 541.485 )
+
+[node name="Pincho4" parent="Obstaculos/4Pinchos9" instance=ExtResource( 5 )]
+position = Vector2( 80.7754, 541.296 )
+
+[node name="4Pinchos11" type="Node2D" parent="Obstaculos"]
+position = Vector2( 716.236, 95.1858 )
+rotation = 4.71239
+scale = Vector2( 1, 2 )
+
+[node name="Pincho" parent="Obstaculos/4Pinchos11" instance=ExtResource( 5 )]
+position = Vector2( -49.0374, 541.485 )
+
+[node name="Pincho2" parent="Obstaculos/4Pinchos11" instance=ExtResource( 5 )]
+position = Vector2( -6.22598, 541.485 )
+
+[node name="Pincho3" parent="Obstaculos/4Pinchos11" instance=ExtResource( 5 )]
+position = Vector2( 35.3963, 541.485 )
+
+[node name="Pincho4" parent="Obstaculos/4Pinchos11" instance=ExtResource( 5 )]
+position = Vector2( 80.7754, 541.296 )
+
+[node name="4Pinchos12" type="Node2D" parent="Obstaculos"]
+position = Vector2( 2175.9, 60.2545 )
+rotation = 1.5708
+
+[node name="Pincho" parent="Obstaculos/4Pinchos12" instance=ExtResource( 5 )]
+position = Vector2( -49.0374, 541.485 )
+
+[node name="Pincho2" parent="Obstaculos/4Pinchos12" instance=ExtResource( 5 )]
+position = Vector2( -6.22598, 541.485 )
+
+[node name="Pincho3" parent="Obstaculos/4Pinchos12" instance=ExtResource( 5 )]
+position = Vector2( 35.3963, 541.485 )
+
+[node name="Pincho4" parent="Obstaculos/4Pinchos12" instance=ExtResource( 5 )]
+position = Vector2( 80.7754, 541.296 )
+
+[node name="4Pinchos10" type="Node2D" parent="Obstaculos"]
+position = Vector2( 1198.29, -97.8135 )
+rotation = 3.14159
+scale = Vector2( 1, 0.5 )
+
+[node name="Pincho" parent="Obstaculos/4Pinchos10" instance=ExtResource( 5 )]
+position = Vector2( -49.0374, 541.485 )
+
+[node name="Pincho2" parent="Obstaculos/4Pinchos10" instance=ExtResource( 5 )]
+position = Vector2( -6.22598, 541.485 )
+
+[node name="Pincho3" parent="Obstaculos/4Pinchos10" instance=ExtResource( 5 )]
+position = Vector2( 35.3963, 541.485 )
+
+[node name="Pincho4" parent="Obstaculos/4Pinchos10" instance=ExtResource( 5 )]
+position = Vector2( 80.7754, 541.296 )
+
+[node name="Sierra" parent="Obstaculos" instance=ExtResource( 8 )]
+position = Vector2( 513.941, 266.483 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Sierra2" parent="Obstaculos" instance=ExtResource( 8 )]
+position = Vector2( 553.141, 572.952 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Sierra3" parent="Obstaculos" instance=ExtResource( 8 )]
+position = Vector2( -184.705, -86.3128 )
+scale = Vector2( 0.15, 0.15 )
+
+[node name="Sierra4" parent="Obstaculos" instance=ExtResource( 8 )]
+position = Vector2( 594.502, -150.055 )
+scale = Vector2( 0.15, 0.15 )
+
+[node name="Door" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1834.9, 539.845 )
+
+[node name="HyperCube" parent="." instance=ExtResource( 4 )]
+position = Vector2( -435.242, 199.954 )
+
+[node name="Pistola" parent="." instance=ExtResource( 7 )]
+position = Vector2( 50.1563, 40.1182 )
+rotation = 2.32652
+scale = Vector2( 0.25, 0.25 )
+
+[node name="Player" parent="." instance=ExtResource( 9 )]
+position = Vector2( -414.659, 526.549 )
